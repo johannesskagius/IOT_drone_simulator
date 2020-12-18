@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tableColumns">20sp</dimen>
+    <dimen name="tableValue">15sp</dimen>
+    <dimen name="marginInTabell">0dp</dimen>
+    <dimen name="column3_width">210dp</dimen>
+    <dimen name="column1_width">107dp</dimen>
+    <dimen name="column2_width">154dp</dimen>
+</resources>

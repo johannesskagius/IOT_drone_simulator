@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Drone_simulator</string>
+    <string name="droneimage">droneImage</string>
+</resources>
