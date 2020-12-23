@@ -1,7 +1,8 @@
 package com.example.drone_simulator;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.ImageView;
+import android.widget.TextView;
 
 
 import androidx.annotation.NonNull;
@@ -13,49 +14,49 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     private static final String POSITION_X = "position_X";
     private static final String POSITION_Y = "position_Y";
-
     private static final String Y = "position_Y";
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference drone1Listener = database.getReference("drone1");
     private DatabaseReference drone2Listener = database.getReference("drone2");
     private DatabaseReference request = database.getReference("request");
-    private ImageView activeImageViewDrone;
-    private ImageView activeImageViewRequest;
-    private ImageView activeImageViewFin;
-    private ImageView activeImageViewDrone2;
+    private TextView activeTextViewDrone;
+    private TextView activeTextViewRequest;
+    private TextView activeTextViewFin;
+    private TextView activeTextViewDrone2;
     private Drone drone1 = null;
     private Drone drone2 = null;
-    private Map<String, ImageView> imageViewArray = new HashMap();
+    private Map<String, TextView> TextViewArray = new HashMap();
+    private Map<String, String> usedPosition = new HashMap<>();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        addImageViews();
+        addTextViews();
         addDrone();
-        getAndSetDronePosition();
-        getRequest();
+        getdrone2Position();
+        getdrone1Position();
+        getRequestPosition();
+        getFinishPosition();
     }
 
-
-
-    private void getRequest() {
-        request.addValueEventListener(new ValueEventListener() {
+    private void getdrone1Position() {
+        drone1Listener.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String startPosX = snapshot.child("startPos x").getValue().toString();
-                String startPosY = snapshot.child("startPos y").getValue().toString();
-                String finishPosx = snapshot.child("Finish x").getValue().toString();
-                String finishPosY = snapshot.child("Finish y").getValue().toString();
-                showObjectPosition(startPosX+startPosY,"req");
+                String xValue = snapshot.child(POSITION_X).getValue().toString();
+                String yValue = snapshot.child(POSITION_Y).getValue().toString();
+                drone1.setxPosition(Integer.parseInt(xValue));
+                drone1.setyPosition(Integer.parseInt(yValue));
+                showObjectPosition2(xValue + yValue, "drone1");                //Shows drone position via image resource
             }
 
             @Override
@@ -63,10 +64,41 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
-    private void addImageViews() {
+
+    private void getRequestPosition() {
+        request.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String startPosX = snapshot.child("startPos x").getValue().toString();
+                String startPosY = snapshot.child("startPos y").getValue().toString();
+                showObjectPosition2(startPosX+startPosY,"req");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+    private void getFinishPosition(){
+        request.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String startPosX = snapshot.child("Finish x").getValue().toString();
+                String startPosY = snapshot.child("Finish y").getValue().toString();
+                showObjectPosition2(startPosX+startPosY,"fin");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void addTextViews() {
         String ONE = "1";
         String TWO = "2";
         String THREE = "3";
@@ -78,54 +110,54 @@ public class MainActivity extends AppCompatActivity {
         String NINE = "9";
         String ZERO = "0";
 
-        imageViewArray.put(ONE + ONE + FOUR, (ImageView) findViewById(R.id.img1));      //FOOBAR
-        imageViewArray.put(TWO + ONE + FOUR, (ImageView) findViewById(R.id.img2));      //WC1
-        imageViewArray.put(THREE + ONE + FOUR, (ImageView) findViewById(R.id.img3));    //ENTRY
-        imageViewArray.put(FOUR + ONE + FOUR, (ImageView) findViewById(R.id.img4));     //SEMINARIUM
-        imageViewArray.put(ONE + ONE + THREE, (ImageView) findViewById(R.id.img6));     //LUNCHRUM
-        imageViewArray.put(TWO + ONE + THREE, (ImageView) findViewById(R.id.img7));     //ENTRY
-        imageViewArray.put(FOUR + ONE + THREE, (ImageView) findViewById(R.id.img8));
+        TextViewArray.put(ONE + ONE + FOUR, (TextView) findViewById(R.id.img1));      //FOOBAR
+        TextViewArray.put(TWO + ONE + FOUR, (TextView) findViewById(R.id.img2));      //WC1
+        TextViewArray.put(THREE + ONE + FOUR, (TextView) findViewById(R.id.img3));    //ENTRY
+        TextViewArray.put(FOUR + ONE + FOUR, (TextView) findViewById(R.id.img4));     //SEMINARIUM
+        TextViewArray.put(ONE + ONE + THREE, (TextView) findViewById(R.id.img6));     //LUNCHRUM
+        TextViewArray.put(TWO + ONE + THREE, (TextView) findViewById(R.id.img7));     //ENTRY
+        TextViewArray.put(FOUR + ONE + THREE, (TextView) findViewById(R.id.img8));
 
-        imageViewArray.put(TWO + ONE + TWO, (ImageView) findViewById(R.id.img12));
-        imageViewArray.put(THREE + ONE + TWO, (ImageView) findViewById(R.id.img13));
-        imageViewArray.put(TWO + ONE + ONE, (ImageView) findViewById(R.id.img17));
-        imageViewArray.put(THREE + ONE + ONE, (ImageView) findViewById(R.id.img18));
+        TextViewArray.put(TWO + ONE + TWO, (TextView) findViewById(R.id.img12));
+        TextViewArray.put(THREE + ONE + TWO, (TextView) findViewById(R.id.img13));
+        TextViewArray.put(TWO + ONE + ONE, (TextView) findViewById(R.id.img17));
+        TextViewArray.put(THREE + ONE + ONE, (TextView) findViewById(R.id.img18));
 
-        imageViewArray.put(TWO + ONE + ZERO, (ImageView) findViewById(R.id.img22));
-        imageViewArray.put(THREE + ONE + ZERO, (ImageView) findViewById(R.id.img23));
+        TextViewArray.put(TWO + ONE + ZERO, (TextView) findViewById(R.id.img22));
+        TextViewArray.put(THREE + ONE + ZERO, (TextView) findViewById(R.id.img23));
 
-        imageViewArray.put(TWO + ZERO + NINE, (ImageView) findViewById(R.id.img27));
-        imageViewArray.put(THREE + ZERO + NINE, (ImageView) findViewById(R.id.img28));
+        TextViewArray.put(TWO + ZERO + NINE, (TextView) findViewById(R.id.img27));
+        TextViewArray.put(THREE + ZERO + NINE, (TextView) findViewById(R.id.img28));
 
-        imageViewArray.put(TWO + ZERO + EIGHT, (ImageView) findViewById(R.id.img32));
-        imageViewArray.put(THREE + ZERO + EIGHT, (ImageView) findViewById(R.id.img33));
-        imageViewArray.put(TWO + ZERO + SEVEN, (ImageView) findViewById(R.id.img37));
-        imageViewArray.put(THREE + ZERO + SEVEN, (ImageView) findViewById(R.id.img38));
+        TextViewArray.put(TWO + ZERO + EIGHT, (TextView) findViewById(R.id.img32));
+        TextViewArray.put(THREE + ZERO + EIGHT, (TextView) findViewById(R.id.img33));
+        TextViewArray.put(TWO + ZERO + SEVEN, (TextView) findViewById(R.id.img37));
+        TextViewArray.put(THREE + ZERO + SEVEN, (TextView) findViewById(R.id.img38));
 
-        imageViewArray.put(TWO + ZERO + SIX, (ImageView) findViewById(R.id.img42));
-        imageViewArray.put(THREE + ZERO + SIX, (ImageView) findViewById(R.id.img43));
-        imageViewArray.put(TWO + ZERO + FIVE, (ImageView) findViewById(R.id.img47));
-        imageViewArray.put(THREE + ZERO + FIVE, (ImageView) findViewById(R.id.img48));
-        imageViewArray.put(FOUR + ZERO + FIVE, (ImageView) findViewById(R.id.img49));       //MEDIALABB
+        TextViewArray.put(TWO + ZERO + SIX, (TextView) findViewById(R.id.img42));
+        TextViewArray.put(THREE + ZERO + SIX, (TextView) findViewById(R.id.img43));
+        TextViewArray.put(TWO + ZERO + FIVE, (TextView) findViewById(R.id.img47));
+        TextViewArray.put(THREE + ZERO + FIVE, (TextView) findViewById(R.id.img48));
+        TextViewArray.put(FOUR + ZERO + FIVE, (TextView) findViewById(R.id.img49));       //MEDIALABB
 
-//        imageViewArray.put(ONE + ZERO + FOUR, (ImageView) findViewById(R.id.img51));        // L50
-        imageViewArray.put(TWO + ZERO + FOUR, (ImageView) findViewById(R.id.img52));
-        imageViewArray.put(THREE + ZERO + FOUR, (ImageView) findViewById(R.id.img53));
-        imageViewArray.put(FOUR + ZERO + FOUR, (ImageView) findViewById(R.id.img54));
-        imageViewArray.put(FIVE + ZERO + FOUR, (ImageView) findViewById(R.id.img55));
-        imageViewArray.put(SIX + ZERO + FOUR, (ImageView) findViewById(R.id.img56));
-        imageViewArray.put(SEVEN + ZERO + FOUR, (ImageView) findViewById(R.id.img57));
-        imageViewArray.put(EIGHT + ZERO + FOUR, (ImageView) findViewById(R.id.img58));      //L70
+        TextViewArray.put(ONE + ZERO + FOUR, (TextView) findViewById(R.id.img51));        // L50
+        TextViewArray.put(TWO + ZERO + FOUR, (TextView) findViewById(R.id.img52));
+        TextViewArray.put(THREE + ZERO + FOUR, (TextView) findViewById(R.id.img53));
+        TextViewArray.put(FOUR + ZERO + FOUR, (TextView) findViewById(R.id.img54));
+        TextViewArray.put(FIVE + ZERO + FOUR, (TextView) findViewById(R.id.img55));
+        TextViewArray.put(SIX + ZERO + FOUR, (TextView) findViewById(R.id.img56));
+        TextViewArray.put(SEVEN + ZERO + FOUR, (TextView) findViewById(R.id.img57));
+        TextViewArray.put(EIGHT + ZERO + FOUR, (TextView) findViewById(R.id.img58));      //L70
 
-        imageViewArray.put(TWO + ZERO + TWO, (ImageView) findViewById(R.id.img70));
+        TextViewArray.put(TWO + ZERO + TWO, (TextView) findViewById(R.id.img70));
 
-        imageViewArray.put(THREE + ZERO + TWO, (ImageView) findViewById(R.id.img71));
-        imageViewArray.put(FOUR + ZERO + TWO, (ImageView) findViewById(R.id.img72));        //Hiss
-        imageViewArray.put(FIVE + ZERO + TWO, (ImageView) findViewById(R.id.img73));        //Lilla görsalen
-        imageViewArray.put(SIX + ZERO + TWO, (ImageView) findViewById(R.id.img74));
-        imageViewArray.put(SEVEN + ZERO + TWO, (ImageView) findViewById(R.id.img75));       //HISS / WC 3
-        imageViewArray.put(EIGHT + ZERO + TWO, (ImageView) findViewById(R.id.img76));
-        imageViewArray.put(THREE + ZERO + ONE, (ImageView) findViewById(R.id.img80));
+        TextViewArray.put(THREE + ZERO + TWO, (TextView) findViewById(R.id.img71));
+        TextViewArray.put(FOUR + ZERO + TWO, (TextView) findViewById(R.id.img72));        //Hiss
+        TextViewArray.put(FIVE + ZERO + TWO, (TextView) findViewById(R.id.img73));        //Lilla görsalen
+        TextViewArray.put(SIX + ZERO + TWO, (TextView) findViewById(R.id.img74));
+        TextViewArray.put(SEVEN + ZERO + TWO, (TextView) findViewById(R.id.img75));       //HISS / WC 3
+        TextViewArray.put(EIGHT + ZERO + TWO, (TextView) findViewById(R.id.img76));
+        TextViewArray.put(THREE + ZERO + ONE, (TextView) findViewById(R.id.img80));
     }
 
 
@@ -134,77 +166,103 @@ public class MainActivity extends AppCompatActivity {
         drone2 = new Drone(1, 1, 1);
     }
 
-    public void showObjectPosition(String position, String identifier) {
+    public void showObjectPosition(String position, String identifier) {            //Switch case to show drone via image resource
         try {
             int imageResource = 0;
             switch(identifier){
                 case "req":
-                    resetImageView(activeImageViewRequest);
+                    resetTextView(activeTextViewRequest);
                     imageResource = R.drawable.person;
-                    activeImageViewRequest = imageViewArray.get(position);
+                    activeTextViewRequest = TextViewArray.get(position);
                     break;
                 case "fin":
-                    resetImageView(activeImageViewFin);
+                    resetTextView(activeTextViewFin);
                     imageResource = R.drawable.target;
-                    activeImageViewFin = imageViewArray.get(position);
+                    activeTextViewFin = TextViewArray.get(position);
                     break;
                 case "drone1":
-                    resetImageView(activeImageViewDrone);
+                    resetTextView(activeTextViewDrone);
                     imageResource = R.drawable.drone1;
-                    activeImageViewDrone = imageViewArray.get(position);
+                    activeTextViewDrone = TextViewArray.get(position);
                     break;
                 case "drone2":
-                    resetImageView(activeImageViewDrone2);
+                    resetTextView(activeTextViewDrone2);
                     imageResource = R.drawable.drone2;
-                    activeImageViewDrone2 = imageViewArray.get(position);
+                    activeTextViewDrone2 = TextViewArray.get(position);
                     break;
                 default:
                     imageResource = R.drawable.empty;
             }
-            imageViewArray.get(position).setImageResource(imageResource);
-            //imageViewArray.get(position).set
+           //TextViewArray.get(position).setImageResource(imageResource);
+            //TextViewArray.get(position).set
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void resetImageView(ImageView activeImageViewRequest) {
-        if (activeImageViewRequest != null) {
-            activeImageViewRequest.setImageResource(R.drawable.empty);
+    public void showObjectPosition2(String position, String identifier) {            //Switch case to show drone position via text color change resource
+        try {
+            int color;
+            String value = "d";
+            switch(identifier){
+                case "req":
+                    color = Color.MAGENTA;
+                    //checkTextColor(activeTextViewRequest);
+                    activeTextViewRequest = TextViewArray.get(position);
+                    value = activeTextViewRequest.getText().toString();
+                    break;
+                case "fin":
+                    color = Color.CYAN;
+                    //checkTextColor(activeTextViewFin);
+                    activeTextViewFin = TextViewArray.get(identifier);
+                    value = activeTextViewFin.getText().toString();
+                    break;
+                case "drone1":
+                    color = Color.RED;
+                    //checkTextColor(activeTextViewDrone);
+                    activeTextViewDrone = TextViewArray.get(identifier);
+                    value = activeTextViewDrone.getText().toString();
+                    break;
+                case "drone2":
+                    color = Color.RED;
+                    //checkTextColor(activeTextViewDrone2);
+                    activeTextViewDrone2 = TextViewArray.get(position);
+                    value= activeTextViewDrone2.getText().toString();
+                    break;
+                default:
+                    color = Color.WHITE;
+            }
+            TextViewArray.get(position).setTextColor(color);
+            usedPosition.put(identifier,position+value);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
-    private void getAndSetDronePosition() {
+    private void checkTextColor(TextView txt) {
+        if(txt.getCurrentTextColor() != 0){
+            txt.setTextColor(0);
+        }
+    }
+
+    private void resetTextView(TextView activeTextViewRequest) {
+       /* if (activeTextViewRequest != null) {
+            activeTextViewRequest.setImageResource(R.drawable.empty);
+        }*/
+    }
+
+    private void getdrone2Position() {
         try {
             drone2Listener.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     String xValue = snapshot.child(POSITION_X).getValue().toString();
                     String yValue = snapshot.child(POSITION_Y).getValue().toString();
-
                     if (yValue.length() == 1) {
                         yValue = "0" + yValue;
                     }
-
-                    showObjectPosition(xValue + yValue, "drone2");
+                    showObjectPosition2(xValue + yValue, "drone2");                //Shows drone position via image resource
                 }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-            drone1Listener.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    String xValue = snapshot.child(POSITION_X).getValue().toString();
-                    String yValue = snapshot.child(POSITION_Y).getValue().toString();
-                    drone2.setxPosition(Integer.parseInt(xValue));
-                    drone2.setyPosition(Integer.parseInt(yValue));
-                    showObjectPosition(xValue + yValue, "drone1");
-
-                }
-
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
 

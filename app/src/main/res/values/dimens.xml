@@ -3,7 +3,24 @@
     <dimen name="tableColumns">20sp</dimen>
     <dimen name="tableValue">15sp</dimen>
     <dimen name="marginInTabell">0dp</dimen>
-    <dimen name="column3_width">210dp</dimen>
-    <dimen name="column1_width">107dp</dimen>
-    <dimen name="column2_width">154dp</dimen>
+    <dimen name="column3_width">154dp</dimen>
+    <dimen name="column1_width">80dp</dimen>
+    <dimen name="column2_width">115dp</dimen>
+    <dimen name="r14_height">46dp</dimen>
+    <dimen name="r13_height">44dp</dimen>
+    <dimen name="r12_height">43dp</dimen>
+    <dimen name="r11_height">46dp</dimen>
+    <dimen name="r10_height">44dp</dimen>
+    <dimen name="r9_height">45dp</dimen>
+    <dimen name="r8_height">46dp</dimen>
+    <dimen name="r7_height">45dp</dimen>
+    <dimen name="r6_height">45dp</dimen>
+    <dimen name="r5_height">45dp</dimen>
+    <dimen name="r4_hieght">48dp</dimen>
+    <dimen name="column_5_width">75dp</dimen>
+    <dimen name="column_6_width">130dp</dimen>
+    <dimen name="column_78_width">140dp</dimen>
+    <dimen name="r3_height">44dp</dimen>
+    <dimen name="column_9_width">75dp</dimen>
+    <dimen name="r2_height">47dp</dimen>
 </resources>

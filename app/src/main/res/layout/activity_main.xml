@@ -1,504 +1,664 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/background"
+    android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TableRow>
-
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="61dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableColumns"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img1"
-            android:layout_width="@dimen/column1_width"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img2"
-            android:layout_width="@dimen/column2_width"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img3"
-            android:layout_width="@dimen/column3_width"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img4"
-            android:layout_width="@dimen/column3_width"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-    </TableRow>
-
-    <TableRow >
-
-        <ImageView
-            android:id="@+id/img6"
-            android:layout_column="1"
-            android:layout_width="@dimen/column1_width"
-            android:layout_height="38dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img7"
-            android:layout_width="150dp"
-            android:layout_height="38dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img8"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="38dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img9"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="38dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-    </TableRow>
-
-    <TableRow>
-
-        <ImageView
-            android:id="@+id/img11"
-            android:layout_width="@dimen/column1_width"
-            android:layout_height="37dp"
-            android:layout_column="1"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img12"
-            android:layout_width="150dp"
-            android:layout_height="37dp"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img13"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="37dp"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-    </TableRow>
-
-    <TableRow>
-
-        <ImageView
-            android:id="@+id/img17"
-            android:layout_width="150dp"
-            android:layout_height="41dp"
-            android:layout_column="2"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img18"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="41dp"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-    </TableRow>
-
-    <TableRow>
-
-        <ImageView
-            android:id="@+id/img22"
-            android:layout_width="150dp"
-            android:layout_height="39dp"
-            android:layout_column="2"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img23"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="39dp"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-    </TableRow>
-
-    <TableRow>
-
-
-        <ImageView
-            android:id="@+id/img27"
-            android:layout_width="150dp"
-            android:layout_height="38dp"
-            android:layout_column="2"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img28"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="38dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-    </TableRow>
-
-    <TableRow>
-
-
-        <ImageView
-            android:id="@+id/img32"
-            android:layout_width="150dp"
-            android:layout_height="55dp"
-            android:layout_column="2"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img33"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="55dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-    </TableRow>
-
-    <TableRow>
-
-        <ImageView
-            android:id="@+id/img37"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_column="2"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img38"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="60dp"
-            android:layout_column="3"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-    </TableRow>
-
-    <TableRow>
-
-        <ImageView
-            android:id="@+id/img42"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:layout_column="2"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img43"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="80dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-
-    </TableRow>
-
-    <TableRow>
-
-        <ImageView
-            android:id="@+id/img47"
-            android:layout_width="150dp"
-            android:layout_height="59dp"
-            android:layout_column="2"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/img48"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="59dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img49"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="59dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-
-    </TableRow>
-
-    <TableRow>
-
-        <ImageView
-            android:layout_column="2"
-            android:id="@+id/img52"
-            android:layout_width="150dp"
-            android:layout_height="59dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img53"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="59dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img54"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="59dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img55"
-            android:layout_width="93dp"
-            android:layout_height="53dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img56"
-            android:layout_width="165dp"
-            android:layout_height="53dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img57"
-            android:layout_width="190dp"
-            android:layout_height="53dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img58"
-            android:layout_width="100dp"
-            android:layout_height="53dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-
-    </TableRow>
-
-    <TableRow>
-
-        <ImageView
-            android:id="@+id/img61"
-            android:layout_width="150dp"
-            android:layout_height="36dp"
-            android:layout_column="2"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img62"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="36dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img63"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="36dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img64"
-            android:layout_width="93dp"
-            android:layout_height="36dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img65"
-            android:layout_width="171dp"
-            android:layout_height="36dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img66"
-            android:layout_width="192dp"
-            android:layout_height="36dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img67"
-            android:layout_width="102dp"
-            android:layout_height="36dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-    </TableRow>
-
-    <TableRow>
-
-        <ImageView
-            android:id="@+id/img70"
-            android:layout_width="150dp"
-            android:layout_height="79dp"
-            android:layout_column="2"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img71"
-            android:layout_width="208dp"
-            android:layout_height="79dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img72"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="79dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img73"
-            android:layout_width="93dp"
-            android:layout_height="79dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img74"
-            android:layout_width="165dp"
-            android:layout_height="79dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img75"
-            android:layout_width="190dp"
-            android:layout_height="79dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/img76"
-            android:layout_width="100dp"
-            android:layout_height="79dp"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textColor="#FF0000"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-    </TableRow>
-
-    <TableRow>
-
-        <ImageView
-            android:id="@+id/img80"
-            android:layout_width="@dimen/column3_width"
-            android:layout_height="80dp"
-            android:layout_column="3"
-            android:layout_margin="@dimen/marginInTabell"
-            android:textSize="@dimen/tableValue"
-            android:textStyle="bold" />
-
-    </TableRow>
-
-
-</TableLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <TableRow android:layout_marginTop="28dp">
+
+            <TextView
+                android:layout_width="35dp"
+                android:layout_height="46dp"
+                android:layout_margin="@dimen/marginInTabell"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/img1"
+                android:layout_width="@dimen/column1_width"
+                android:layout_height="@dimen/r14_height"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="Foobar (1)"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+
+            <TextView
+                android:id="@+id/img2"
+                android:layout_width="@dimen/column2_width"
+                android:layout_height="@dimen/r14_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="WC 1 (2)"
+
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/img3"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r14_height"
+                android:layout_margin="@dimen/marginInTabell"
+
+                android:text="Entry (3and8)"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/img4"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r14_height"
+                android:layout_margin="@dimen/marginInTabell"
+
+                android:text="Seminarium(4and9)"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/img6"
+                android:layout_width="@dimen/column1_width"
+                android:layout_height="@dimen/r13_height"
+                android:layout_column="1"
+
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="Lunchrum (6and11)"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/img7"
+                android:layout_width="@dimen/column2_width"
+                android:layout_height="@dimen/r13_height"
+                android:layout_margin="@dimen/marginInTabell"
+
+                android:text="7"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/img8"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r13_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/img9"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r13_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/img11"
+                android:layout_width="@dimen/column1_width"
+                android:layout_height="@dimen/r12_height"
+                android:layout_column="1"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/img12"
+                android:layout_width="@dimen/column2_width"
+                android:layout_height="@dimen/r12_height"
+                android:text="12"
+
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/img13"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r12_height"
+                android:text="13"
+                android:textAlignment="center"
+                android:textColor="#000000"
+
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/img17"
+                android:layout_width="@dimen/column2_width"
+                android:layout_height="@dimen/r11_height"
+                android:layout_column="2"
+                android:text="17"
+
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/img18"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r11_height"
+                android:text="18"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/img22"
+                android:layout_width="@dimen/column2_width"
+                android:layout_height="@dimen/r10_height"
+                android:layout_column="2"
+                android:text="22"
+                android:textAlignment="center"
+
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/img23"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r10_height"
+                android:text="23"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+        </TableRow>
+
+        <TableRow>
+
+
+            <TextView
+                android:id="@+id/img27"
+                android:layout_width="@dimen/column2_width"
+                android:layout_height="@dimen/r9_height"
+                android:layout_column="2"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="27"
+
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/img28"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r9_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="28"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+        </TableRow>
+
+        <TableRow>
+
+
+            <TextView
+                android:id="@+id/img32"
+                android:layout_width="@dimen/column2_width"
+                android:layout_height="@dimen/r8_height"
+                android:layout_column="2"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="32"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+
+
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/img33"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r8_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="33"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/img37"
+                android:layout_width="@dimen/column2_width"
+                android:layout_height="@dimen/r7_height"
+                android:layout_column="2"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="37"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/img38"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r7_height"
+                android:layout_column="3"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="38"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/img42"
+                android:layout_width="@dimen/column2_width"
+                android:layout_height="@dimen/r6_height"
+                android:layout_column="2"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="42"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/img43"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r6_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="43"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/img47"
+                android:layout_width="@dimen/column2_width"
+                android:layout_height="@dimen/r5_height"
+                android:layout_column="2"
+                android:layout_margin="@dimen/marginInTabell"
+
+                android:text="47"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold"
+
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/img48"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r5_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="48"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img49"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r5_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="Medialabb (49)"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/img51"
+                android:layout_width="@dimen/column1_width"
+                android:layout_height="@dimen/r4_hieght"
+                android:layout_column="1"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="L50 (51)"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img52"
+                android:layout_width="@dimen/column2_width"
+                android:layout_height="@dimen/r4_hieght"
+                android:layout_column="2"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="52"
+
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img53"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r4_hieght"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="53"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img54"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r4_hieght"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="54"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img55"
+                android:layout_width="@dimen/column_5_width"
+                android:layout_height="@dimen/r4_hieght"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="55"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img56"
+                android:layout_width="@dimen/column_6_width"
+                android:layout_height="@dimen/r4_hieght"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="56"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img57"
+                android:layout_width="@dimen/column_78_width"
+                android:layout_height="@dimen/r4_hieght"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="57"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img58"
+                android:layout_width="@dimen/column_9_width"
+                android:layout_height="@dimen/r4_hieght"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="L70"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/img61"
+                android:layout_width="@dimen/column2_width"
+                android:layout_height="@dimen/r3_height"
+                android:layout_column="2"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="61"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img62"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r3_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="62"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img63"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r3_height"
+
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="63"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img64"
+                android:layout_width="@dimen/column_5_width"
+                android:layout_height="@dimen/r3_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="64"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img65"
+                android:layout_width="@dimen/column_6_width"
+                android:layout_height="@dimen/r3_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="65"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img66"
+                android:layout_width="@dimen/column_78_width"
+                android:layout_height="@dimen/r3_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="66"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img67"
+                android:layout_width="@dimen/column_9_width"
+                android:layout_height="@dimen/r3_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="67"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/img70"
+                android:layout_width="@dimen/column2_width"
+                android:layout_height="@dimen/r2_height"
+                android:layout_column="2"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="70"
+
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img71"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r2_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="71"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img72"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="@dimen/r2_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="72"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img73"
+                android:layout_width="@dimen/column_5_width"
+                android:layout_height="@dimen/r2_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="73"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img74"
+                android:layout_width="@dimen/column_6_width"
+                android:layout_height="@dimen/r2_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="74"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img75"
+                android:layout_width="@dimen/column_78_width"
+                android:layout_height="@dimen/r2_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="75"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/img76"
+                android:layout_width="@dimen/column_9_width"
+                android:layout_height="@dimen/r2_height"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="76"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/img80"
+                android:layout_width="@dimen/column3_width"
+                android:layout_height="42dp"
+                android:layout_column="3"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="80"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tableValue"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+
+    </TableLayout>
+
+
+</RelativeLayout>
