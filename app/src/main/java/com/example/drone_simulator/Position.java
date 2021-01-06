@@ -1,8 +1,8 @@
 package com.example.drone_simulator;
 
 public class Position {
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     public Position(String position) {
         this.x = getXPosition(position);

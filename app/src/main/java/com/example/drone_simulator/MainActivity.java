@@ -3,7 +3,7 @@ package com.example.drone_simulator;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,27 +14,24 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     private static final String POSITION_X = "position_X";
     private static final String POSITION_Y = "position_Y";
-    private static final String Y = "position_Y";
-    private FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private DatabaseReference drone1Listener = database.getReference("drone1");
-    private DatabaseReference drone2Listener = database.getReference("drone2");
-    private DatabaseReference request = database.getReference("request");
-    private TextView activeTextViewDrone;
-    private TextView activeTextViewRequest;
-    private TextView activeTextViewFin;
-    private TextView activeTextViewDrone2;
+    private final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private final DatabaseReference drone1Listener = database.getReference("drone1");
+    private final DatabaseReference drone2Listener = database.getReference("drone2");
+    private final DatabaseReference request = database.getReference("request");
+    private TextView activeTextViewDrone, activeTextViewRequest, activeTextViewFin, activeTextViewDrone2;
     private Drone drone1 = null;
     private Drone drone2 = null;
-    private Map<String, TextView> TextViewArray = new HashMap();
-    private Map<String, String> usedPosition = new HashMap<>();
-
+    private String requestIsActive = "n";
+    private String xFin = "";
+    private String yFin = "";
+    private final Map<String, TextView> TextViewArray = new HashMap();
+    private final Map<String, String> usedPosition = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
         addTextViews();
         addDrone();
         getdrone2Position();
-        getdrone1Position();
+        //getdrone1Position();
         getRequestPosition();
-        getFinishPosition();
+        //getFinishPosition();
     }
 
     private void getdrone1Position() {
@@ -73,7 +70,10 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String startPosX = snapshot.child("startPos x").getValue().toString();
                 String startPosY = snapshot.child("startPos y").getValue().toString();
-                showObjectPosition2(startPosX+startPosY,"req");
+                requestIsActive = snapshot.child("active").getValue().toString();
+                xFin = snapshot.child("Finish x").getValue().toString();
+                yFin = snapshot.child("Finish y").getValue().toString();
+                showObjectPosition2(startPosX + startPosY, "req");
             }
 
             @Override
@@ -82,13 +82,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    private void getFinishPosition(){
+
+    private void getFinishPosition() {
         request.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String startPosX = snapshot.child("Finish x").getValue().toString();
                 String startPosY = snapshot.child("Finish y").getValue().toString();
-                showObjectPosition2(startPosX+startPosY,"fin");
+                showObjectPosition2(startPosX + startPosY, "fin");
             }
 
             @Override
@@ -162,116 +163,67 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void addDrone() {
-        drone1 = new Drone(1, 1, 1);
-        drone2 = new Drone(1, 1, 1);
+        drone1 = new Drone(1, 1);
+        drone2 = new Drone(1, 1);
     }
 
-    public void showObjectPosition(String position, String identifier) {            //Switch case to show drone via image resource
-        try {
-            int imageResource = 0;
-            switch(identifier){
-                case "req":
-                    resetTextView(activeTextViewRequest);
-                    imageResource = R.drawable.person;
-                    activeTextViewRequest = TextViewArray.get(position);
-                    break;
-                case "fin":
-                    resetTextView(activeTextViewFin);
-                    imageResource = R.drawable.target;
-                    activeTextViewFin = TextViewArray.get(position);
-                    break;
-                case "drone1":
-                    resetTextView(activeTextViewDrone);
-                    imageResource = R.drawable.drone1;
-                    activeTextViewDrone = TextViewArray.get(position);
-                    break;
-                case "drone2":
-                    resetTextView(activeTextViewDrone2);
-                    imageResource = R.drawable.drone2;
-                    activeTextViewDrone2 = TextViewArray.get(position);
-                    break;
-                default:
-                    imageResource = R.drawable.empty;
-            }
-           //TextViewArray.get(position).setImageResource(imageResource);
-            //TextViewArray.get(position).set
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     public void showObjectPosition2(String position, String identifier) {            //Switch case to show drone position via text color change resource
+        int color;
+        String value = "d";
+        switch (identifier) {
+            case "req":
+                color = Color.MAGENTA;
+                //checkTextColor(activeTextViewRequest);
+                activeTextViewRequest = TextViewArray.get(position);
+                value = activeTextViewRequest.getText().toString();
+                break;
+            case "fin":
+                color = Color.CYAN;
+                //checkTextColor(activeTextViewFin);
+                activeTextViewFin = TextViewArray.get(identifier);
+                value = activeTextViewFin.getText().toString();
+                break;
+            case "drone1":
+                color = Color.RED;
+                //checkTextColor(activeTextViewDrone);
+                activeTextViewDrone = TextViewArray.get(identifier);
+                value = activeTextViewDrone.getText().toString();
+                break;
+            case "drone2":
+                color = Color.RED;
+                //checkTextColor(activeTextViewDrone2);
+                activeTextViewDrone2 = TextViewArray.get(position);
+                //value = activeTextViewDrone2.getText().toString();
+                break;
+            default:
+                color = Color.WHITE;
+        }
         try {
-            int color;
-            String value = "d";
-            switch(identifier){
-                case "req":
-                    color = Color.MAGENTA;
-                    //checkTextColor(activeTextViewRequest);
-                    activeTextViewRequest = TextViewArray.get(position);
-                    value = activeTextViewRequest.getText().toString();
-                    break;
-                case "fin":
-                    color = Color.CYAN;
-                    //checkTextColor(activeTextViewFin);
-                    activeTextViewFin = TextViewArray.get(identifier);
-                    value = activeTextViewFin.getText().toString();
-                    break;
-                case "drone1":
-                    color = Color.RED;
-                    //checkTextColor(activeTextViewDrone);
-                    activeTextViewDrone = TextViewArray.get(identifier);
-                    value = activeTextViewDrone.getText().toString();
-                    break;
-                case "drone2":
-                    color = Color.RED;
-                    //checkTextColor(activeTextViewDrone2);
-                    activeTextViewDrone2 = TextViewArray.get(position);
-                    value= activeTextViewDrone2.getText().toString();
-                    break;
-                default:
-                    color = Color.WHITE;
-            }
             TextViewArray.get(position).setTextColor(color);
-            usedPosition.put(identifier,position+value);
-        } catch (Exception e) {
+            usedPosition.put(identifier, position + value);
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
 
-    private void checkTextColor(TextView txt) {
-        if(txt.getCurrentTextColor() != 0){
-            txt.setTextColor(0);
-        }
-    }
-
-    private void resetTextView(TextView activeTextViewRequest) {
-       /* if (activeTextViewRequest != null) {
-            activeTextViewRequest.setImageResource(R.drawable.empty);
-        }*/
-    }
 
     private void getdrone2Position() {
-        try {
-            drone2Listener.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    String xValue = snapshot.child(POSITION_X).getValue().toString();
-                    String yValue = snapshot.child(POSITION_Y).getValue().toString();
-                    if (yValue.length() == 1) {
-                        yValue = "0" + yValue;
-                    }
-                    showObjectPosition2(xValue + yValue, "drone2");                //Shows drone position via image resource
+        drone2Listener.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String xValue = snapshot.child(POSITION_X).getValue().toString();
+                String yValue = snapshot.child(POSITION_Y).getValue().toString();
+                if (yValue.length() == 1) {
+                    yValue = "0" + yValue;
                 }
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
+                showObjectPosition2(xValue + yValue, "drone2");
+            }
 
-                }
-            });
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

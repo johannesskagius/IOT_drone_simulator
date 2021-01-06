@@ -3,12 +3,10 @@ package com.example.drone_simulator;
 public class Drone {
     private int xPosition;
     private int yPosition;
-    private int zPosition;
 
-    public Drone(int xPosition, int yPosition, int zPosition) {
+    public Drone(int xPosition, int yPosition) {
         this.xPosition = xPosition;
         this.yPosition = yPosition;
-        this.zPosition = zPosition;
     }
 
     public int getxPosition() {
