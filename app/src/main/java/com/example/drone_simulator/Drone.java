@@ -1,6 +1,6 @@
 package com.example.drone_simulator;
 
-public class Drone {
+public class Drone {        //This is a drone class containing each drones x and y positions
     private int xPosition;
     private int yPosition;
 

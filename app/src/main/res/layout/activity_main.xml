@@ -8,14 +8,17 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:ignore="UselessParent">
+        tools:ignore="UselessParent"
+        android:layout_marginTop="28dp">
 
-        <TableRow android:layout_marginTop="28dp">
+        <TableRow >
 
             <TextView
                 android:layout_width="35dp"
-                android:layout_height="46dp"
                 android:layout_margin="@dimen/marginInTabell"
+                android:layout_height="match_parent"
+                android:text="14"
+                android:textAlignment="center"
                 android:textSize="@dimen/tableColumns"
                 android:textStyle="bold"
                 tools:ignore="ContentDescription" />
@@ -50,7 +53,6 @@
                 android:id="@+id/img3"
                 android:layout_width="@dimen/column3_width"
                 android:layout_height="@dimen/r14_height"
-                android:layout_margin="@dimen/marginInTabell"
 
                 android:text="Entry (3and8)"
                 android:textAlignment="center"
@@ -74,6 +76,16 @@
         </TableRow>
 
         <TableRow>
+
+            <TextView
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="13"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/img6"
@@ -126,6 +138,16 @@
         <TableRow>
 
             <TextView
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="12"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
                 android:id="@+id/img11"
                 android:layout_width="@dimen/column1_width"
                 android:layout_height="@dimen/r12_height"
@@ -163,6 +185,16 @@
         <TableRow>
 
             <TextView
+                android:layout_width="35dp"
+                android:layout_height="46dp"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="11"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
                 android:id="@+id/img17"
                 android:layout_width="@dimen/column2_width"
                 android:layout_height="@dimen/r11_height"
@@ -188,6 +220,16 @@
         </TableRow>
 
         <TableRow>
+
+            <TextView
+                android:layout_width="35dp"
+                android:layout_height="46dp"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="10"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/img22"
@@ -217,6 +259,15 @@
 
         <TableRow>
 
+            <TextView
+                android:layout_width="35dp"
+                android:layout_height="46dp"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="9"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/img27"
@@ -248,6 +299,15 @@
 
         <TableRow>
 
+            <TextView
+                android:layout_width="35dp"
+                android:layout_height="46dp"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="8"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/img32"
@@ -280,6 +340,16 @@
         <TableRow>
 
             <TextView
+                android:layout_width="35dp"
+                android:layout_height="46dp"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="7"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
                 android:id="@+id/img37"
                 android:layout_width="@dimen/column2_width"
                 android:layout_height="@dimen/r7_height"
@@ -308,6 +378,16 @@
         </TableRow>
 
         <TableRow>
+
+            <TextView
+                android:layout_width="35dp"
+                android:layout_height="46dp"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="6"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/img42"
@@ -339,6 +419,16 @@
         </TableRow>
 
         <TableRow>
+
+            <TextView
+                android:layout_width="35dp"
+                android:layout_height="46dp"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="5"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/img47"
@@ -381,6 +471,16 @@
         </TableRow>
 
         <TableRow>
+
+            <TextView
+                android:layout_width="35dp"
+                android:layout_height="46dp"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="4"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/img51"
@@ -479,6 +579,16 @@
         <TableRow>
 
             <TextView
+                android:layout_width="35dp"
+                android:layout_height="46dp"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="3"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
                 android:id="@+id/img61"
                 android:layout_width="@dimen/column2_width"
                 android:layout_height="@dimen/r3_height"
@@ -559,6 +669,16 @@
         </TableRow>
 
         <TableRow>
+
+            <TextView
+                android:layout_width="35dp"
+                android:layout_height="46dp"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="2"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/img70"
@@ -644,6 +764,16 @@
         <TableRow>
 
             <TextView
+                android:layout_width="35dp"
+                android:layout_height="46dp"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="1"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
                 android:id="@+id/img80"
                 android:layout_width="@dimen/column3_width"
                 android:layout_height="42dp"
@@ -654,6 +784,77 @@
                 android:textColor="#000000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="35dp"
+                android:layout_height="46dp"
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="1"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="2"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="3"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="4"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="5"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="6"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="7"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_margin="@dimen/marginInTabell"
+                android:text="8"
+                android:textAlignment="center"
+                android:textSize="@dimen/tableColumns"
+                android:textStyle="bold" />
+
 
         </TableRow>
 
