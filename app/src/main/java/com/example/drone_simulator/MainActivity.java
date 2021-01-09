@@ -2,6 +2,7 @@ package com.example.drone_simulator;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,8 +18,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {       //Instatiate variables
-    private static final String POSITION_X = "position_X";
-    private static final String POSITION_Y = "position_Y";
+    private static final String FIN_POSITION_X = "position_X";
+    private static final String FIN_POSITION_Y = "position_Y";
+    private static final String CALL_POSITION_X = "startPos x";
+    private static final String CALL_POSITION_Y = "startPos y";
     private final FirebaseDatabase database = FirebaseDatabase.getInstance();
     private final DatabaseReference drone1Listener = database.getReference("drone1");
     private final DatabaseReference drone2Listener = database.getReference("drone2");
@@ -27,8 +30,10 @@ public class MainActivity extends AppCompatActivity {       //Instatiate variabl
     private Drone drone1 = null;
     private Drone drone2 = null;
     private String requestIsActive = "n";
-    private String xFin = "";
-    private String yFin = "";
+    private String fin_X_pos = "";
+    private String fin_Y_pos = "";
+    private String call_X_pos = "";
+    private String call_Y_pos = "";
     private final Map<String, TextView> textViewMap = new HashMap();
     private final Map<String, String> usedPosition = new HashMap<>();
 
@@ -46,12 +51,13 @@ public class MainActivity extends AppCompatActivity {       //Instatiate variabl
         request.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String startPosX = snapshot.child("startPos x").getValue().toString();
-                String startPosY = snapshot.child("startPos y").getValue().toString();
+                call_X_pos = snapshot.child("startPos x").getValue().toString();
+                call_Y_pos = snapshot.child("startPos y").getValue().toString();
                 requestIsActive = snapshot.child("active").getValue().toString();
-                xFin = snapshot.child("Finish x").getValue().toString();
-                yFin = snapshot.child("Finish y").getValue().toString();
-                showobjectposition(startPosX + startPosY, "req");
+                fin_X_pos = snapshot.child("Finish x").getValue().toString();
+                fin_Y_pos = snapshot.child("Finish y").getValue().toString();
+
+                showobjectposition(call_X_pos + call_Y_pos, "req");
             }
 
             @Override
@@ -113,14 +119,22 @@ public class MainActivity extends AppCompatActivity {       //Instatiate variabl
         textViewMap.put(SEVEN + ZERO + FOUR, (TextView) findViewById(R.id.img57));
         textViewMap.put(EIGHT + ZERO + FOUR, (TextView) findViewById(R.id.img58));      //L70
 
-        textViewMap.put(TWO + ZERO + TWO, (TextView) findViewById(R.id.img70));
+        textViewMap.put(TWO + ZERO + THREE, (TextView) findViewById(R.id.img61));
+        textViewMap.put(THREE + ZERO + THREE, (TextView) findViewById(R.id.img62));
+        textViewMap.put(FOUR + ZERO + THREE, (TextView) findViewById(R.id.img63));
+        textViewMap.put(FIVE + ZERO + THREE, (TextView) findViewById(R.id.img64));       // Lilla hörsalen
+        textViewMap.put(SIX + ZERO + THREE, (TextView) findViewById(R.id.img65));
+        textViewMap.put(SEVEN + ZERO + THREE, (TextView) findViewById(R.id.img66));        // WC 3
+        textViewMap.put(EIGHT + ZERO + THREE, (TextView) findViewById(R.id.img67));
 
+        textViewMap.put(TWO + ZERO + TWO, (TextView) findViewById(R.id.img70));
         textViewMap.put(THREE + ZERO + TWO, (TextView) findViewById(R.id.img71));
         textViewMap.put(FOUR + ZERO + TWO, (TextView) findViewById(R.id.img72));        //Hiss
         textViewMap.put(FIVE + ZERO + TWO, (TextView) findViewById(R.id.img73));        //Lilla görsalen
         textViewMap.put(SIX + ZERO + TWO, (TextView) findViewById(R.id.img74));
         textViewMap.put(SEVEN + ZERO + TWO, (TextView) findViewById(R.id.img75));       //HISS / WC 3
         textViewMap.put(EIGHT + ZERO + TWO, (TextView) findViewById(R.id.img76));
+
         textViewMap.put(THREE + ZERO + ONE, (TextView) findViewById(R.id.img80));
     }
 
@@ -132,7 +146,7 @@ public class MainActivity extends AppCompatActivity {       //Instatiate variabl
 
 
     public void showobjectposition(String position, String identifier) {            //Switch case to show drone an objects position. It uses switch to identify what color should be used.
-                                                                                    //The colors are used to let the viewer easily identify where the objects are.
+                                                                                             //The colors are used to let the viewer easily identify where the objects are.
         int color;
         String value = "d";
         switch (identifier) {
@@ -167,11 +181,14 @@ public class MainActivity extends AppCompatActivity {       //Instatiate variabl
         drone2Listener.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String xValue = snapshot.child(POSITION_X).getValue().toString();
-                String yValue = snapshot.child(POSITION_Y).getValue().toString();
+                String xValue = snapshot.child(FIN_POSITION_X).getValue().toString();
+                String yValue = snapshot.child(FIN_POSITION_Y).getValue().toString();
                 if (yValue.length() == 1) {
                     yValue = "0" + yValue;
                 }
+                //Check if drone is at any of the targets
+                checkDroneProgress(xValue, yValue);
+
                 showobjectposition(xValue + yValue, "drone2");
             }
 
@@ -180,5 +197,17 @@ public class MainActivity extends AppCompatActivity {       //Instatiate variabl
 
             }
         });
+    }
+
+    private void checkDroneProgress(String xValue, String yValue) {
+        if(xValue.equals(call_X_pos) && yValue.equals(call_Y_pos)) resetColors();
+        if(xValue.equals(fin_X_pos) && yValue.equals(call_Y_pos)) resetColors();
+    }
+
+    public void resetColors() {
+        recreate();
+    }
+    public void resetColors(View view) {
+        recreate();
     }
 }

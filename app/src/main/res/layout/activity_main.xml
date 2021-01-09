@@ -73,6 +73,13 @@
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
                 tools:ignore="ContentDescription" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="reset Colors"
+                android:onClick="resetColors"/>
+
         </TableRow>
 
         <TableRow>
@@ -109,7 +116,7 @@
 
                 android:text="7"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
                 tools:ignore="ContentDescription" />
@@ -119,7 +126,9 @@
                 android:layout_width="@dimen/column3_width"
                 android:layout_height="@dimen/r13_height"
                 android:layout_margin="@dimen/marginInTabell"
+                android:text="7"
                 android:textAlignment="center"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
                 tools:ignore="ContentDescription" />
@@ -164,7 +173,7 @@
                 android:text="12"
 
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
                 tools:ignore="ContentDescription" />
@@ -175,7 +184,7 @@
                 android:layout_height="@dimen/r12_height"
                 android:text="13"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
 
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
@@ -202,7 +211,7 @@
                 android:text="17"
 
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
                 tools:ignore="ContentDescription" />
@@ -213,7 +222,7 @@
                 android:layout_height="@dimen/r11_height"
                 android:text="18"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
                 tools:ignore="ContentDescription" />
@@ -239,7 +248,7 @@
                 android:text="22"
                 android:textAlignment="center"
 
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
                 tools:ignore="ContentDescription" />
@@ -250,7 +259,7 @@
                 android:layout_height="@dimen/r10_height"
                 android:text="23"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
                 tools:ignore="ContentDescription" />
@@ -278,7 +287,7 @@
                 android:text="27"
 
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
                 tools:ignore="ContentDescription" />
@@ -290,7 +299,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="28"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
                 tools:ignore="ContentDescription" />
@@ -317,7 +326,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="32"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
 
 
@@ -331,7 +340,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="33"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
                 tools:ignore="ContentDescription" />
@@ -357,7 +366,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="37"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
 
@@ -371,7 +380,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="38"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
                 tools:ignore="ContentDescription" />
@@ -397,7 +406,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="42"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
 
@@ -410,7 +419,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="43"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
                 tools:ignore="ContentDescription" />
@@ -439,7 +448,7 @@
 
                 android:text="47"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold"
 
@@ -452,7 +461,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="48"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
 
@@ -503,7 +512,7 @@
                 android:text="52"
 
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
 
@@ -514,7 +523,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="53"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
 
@@ -525,7 +534,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="54"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
 
@@ -534,7 +543,7 @@
                 android:layout_width="@dimen/column_5_width"
                 android:layout_height="@dimen/r4_hieght"
                 android:layout_margin="@dimen/marginInTabell"
-                android:text="55"
+                android:text="Bord 55"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="@dimen/tableValue"
@@ -545,7 +554,7 @@
                 android:layout_width="@dimen/column_6_width"
                 android:layout_height="@dimen/r4_hieght"
                 android:layout_margin="@dimen/marginInTabell"
-                android:text="56"
+                android:text="Bord 56"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="@dimen/tableValue"
@@ -558,7 +567,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="57"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
 
@@ -596,7 +605,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="61"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
 
@@ -607,7 +616,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="62"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
 
@@ -619,7 +628,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="63"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
 
@@ -628,7 +637,7 @@
                 android:layout_width="@dimen/column_5_width"
                 android:layout_height="@dimen/r3_height"
                 android:layout_margin="@dimen/marginInTabell"
-                android:text="64"
+                android:text="Lilla hörsalen"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="@dimen/tableValue"
@@ -641,7 +650,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="65"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
 
@@ -650,9 +659,9 @@
                 android:layout_width="@dimen/column_78_width"
                 android:layout_height="@dimen/r3_height"
                 android:layout_margin="@dimen/marginInTabell"
-                android:text="66"
+                android:text="Hiss / WC"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
 
@@ -663,7 +672,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="67"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
         </TableRow>
@@ -689,7 +698,7 @@
                 android:text="70"
 
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
 
@@ -700,7 +709,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="71"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
 
@@ -709,9 +718,9 @@
                 android:layout_width="@dimen/column3_width"
                 android:layout_height="@dimen/r2_height"
                 android:layout_margin="@dimen/marginInTabell"
-                android:text="72"
+                android:text="WC / Hiss "
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
 
@@ -720,7 +729,7 @@
                 android:layout_width="@dimen/column_5_width"
                 android:layout_height="@dimen/r2_height"
                 android:layout_margin="@dimen/marginInTabell"
-                android:text="73"
+                android:text="Bord 73"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="@dimen/tableValue"
@@ -731,7 +740,7 @@
                 android:layout_width="@dimen/column_6_width"
                 android:layout_height="@dimen/r2_height"
                 android:layout_margin="@dimen/marginInTabell"
-                android:text="74"
+                android:text="Bord 74"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="@dimen/tableValue"
@@ -744,7 +753,7 @@
                 android:layout_margin="@dimen/marginInTabell"
                 android:text="75"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#000"
                 android:textSize="@dimen/tableValue"
                 android:textStyle="bold" />
 
@@ -753,7 +762,7 @@
                 android:layout_width="@dimen/column_9_width"
                 android:layout_height="@dimen/r2_height"
                 android:layout_margin="@dimen/marginInTabell"
-                android:text="76"
+                android:text="GRP rum 76"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="@dimen/tableValue"
@@ -779,7 +788,7 @@
                 android:layout_height="42dp"
                 android:layout_column="3"
                 android:layout_margin="@dimen/marginInTabell"
-                android:text="80"
+                android:text="D3 80"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="@dimen/tableValue"
