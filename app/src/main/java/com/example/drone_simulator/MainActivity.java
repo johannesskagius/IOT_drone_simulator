@@ -1,3 +1,5 @@
+
+//josk3261@student.su.se
 package com.example.drone_simulator;
 
 import android.graphics.Color;
@@ -86,7 +88,7 @@ public class MainActivity extends AppCompatActivity {       //Instatiate variabl
         textViewMap.put(FOUR + ONE + FOUR, (TextView) findViewById(R.id.img4));     //SEMINARIUM
         textViewMap.put(ONE + ONE + THREE, (TextView) findViewById(R.id.img6));     //LUNCHRUM
         textViewMap.put(TWO + ONE + THREE, (TextView) findViewById(R.id.img7));     //ENTRY
-        textViewMap.put(FOUR + ONE + THREE, (TextView) findViewById(R.id.img8));
+        textViewMap.put(THREE + ONE + THREE, (TextView) findViewById(R.id.img8));
 
         textViewMap.put(TWO + ONE + TWO, (TextView) findViewById(R.id.img12));
         textViewMap.put(THREE + ONE + TWO, (TextView) findViewById(R.id.img13));

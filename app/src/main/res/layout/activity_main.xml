@@ -126,7 +126,7 @@
                 android:layout_width="@dimen/column3_width"
                 android:layout_height="@dimen/r13_height"
                 android:layout_margin="@dimen/marginInTabell"
-                android:text="7"
+                android:text="8"
                 android:textAlignment="center"
                 android:textColor="#000"
                 android:textSize="@dimen/tableValue"
